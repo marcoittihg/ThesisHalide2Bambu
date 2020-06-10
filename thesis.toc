@@ -1,0 +1,55 @@
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\contentsline {chapter}{Abstract}{{\fontencoding {T1}\selectfont I}}{chapter*.1}
+\contentsline {chapter}{Ringraziamenti}{{\fontencoding {T1}\selectfont III}}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Definitions}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Conclusions}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}State of the art}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Chapter structure}{6}{section.3.1}
+\contentsline {section}{\numberline {3.2}StreamIt}{6}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Streaming Application Domain}{7}{subsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.1.1}Large stream of data}{7}{subsubsection.3.2.1.1}
+\contentsline {paragraph}{Large stream of data}{7}{subsubsection.3.2.1.1}
+\contentsline {subsubsection}{\numberline {3.2.1.2}Independent stream filters}{7}{subsubsection.3.2.1.2}
+\contentsline {paragraph}{Independent stream filters}{7}{subsubsection.3.2.1.2}
+\contentsline {subsubsection}{\numberline {3.2.1.3}Stable computation pattern}{7}{subsubsection.3.2.1.3}
+\contentsline {paragraph}{Stable computation pattern}{7}{subsubsection.3.2.1.3}
+\contentsline {subsubsection}{\numberline {3.2.1.4}Occasional out-of-stream communication}{8}{subsubsection.3.2.1.4}
+\contentsline {paragraph}{Occasional out-of-stream communication}{8}{subsubsection.3.2.1.4}
+\contentsline {subsubsection}{\numberline {3.2.1.5}High performance expectations}{8}{subsubsection.3.2.1.5}
+\contentsline {paragraph}{High performance expectations}{8}{subsubsection.3.2.1.5}
+\contentsline {subsection}{\numberline {3.2.2}Streamit Program}{8}{subsection.3.2.2}
+\contentsline {paragraph}{Filter}{8}{section*.4}
+\contentsline {paragraph}{Pipeline}{9}{section*.5}
+\contentsline {paragraph}{SplitJoin}{9}{section*.6}
+\contentsline {paragraph}{Feedback loop}{10}{section*.7}
+\contentsline {subsection}{\numberline {3.2.3}Compilation Infrastructure}{10}{subsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Stream Graph Scheduling}{11}{subsubsection.3.2.3.1}
+\contentsline {paragraph}{Stream Graph Scheduling}{11}{subsubsection.3.2.3.1}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Partitioning}{11}{subsubsection.3.2.3.2}
+\contentsline {paragraph}{Partitioning}{11}{subsubsection.3.2.3.2}
+\contentsline {subsubsection}{\numberline {3.2.3.3}Layout}{12}{subsubsection.3.2.3.3}
+\contentsline {paragraph}{Layout}{12}{subsubsection.3.2.3.3}
+\contentsline {subsubsection}{\numberline {3.2.3.4}Communication scheduler}{12}{subsubsection.3.2.3.4}
+\contentsline {paragraph}{Communication scheduler}{12}{subsubsection.3.2.3.4}
+\contentsline {section}{\numberline {3.3}VitisAI}{13}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Optimization tools}{13}{subsection.3.3.1}
+\contentsline {paragraph}{AIOptimizer}{13}{section*.8}
+\contentsline {paragraph}{AIQuantizer}{14}{section*.9}
+\contentsline {paragraph}{AICompiler}{14}{section*.10}
+\contentsline {section}{\numberline {3.4}Halide}{14}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Algorithm definition}{14}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Schedule definition}{15}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Halide Compiler}{16}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Deep learning applications}{18}{subsection.3.4.4}
+\contentsline {section}{\numberline {3.5}Conclusions}{19}{section.3.5}
+\contentsline {chapter}{\numberline {4}From ONNX model to Bambu HLS}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Motivations}{21}{section.4.1}
+\contentsline {section}{\numberline {4.2}Design flow}{22}{section.4.2}
+\contentsline {section}{\numberline {4.3}The Bambu back-end}{23}{section.4.3}
+\contentsline {section}{\numberline {4.4}Conclusions}{23}{section.4.4}
+\contentsline {chapter}{List of Figures}{25}{section*.11}
+\contentsline {chapter}{List of Tables}{27}{section*.12}
+\contentsline {chapter}{Bibliography}{29}{section*.13}
