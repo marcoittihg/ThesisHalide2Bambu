@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.7)  10 JUN 2020 13:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.7)  20 JUN 2020 11:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -647,6 +647,12 @@ Package caption2 Info: subfigure package v2.1 (or newer) detected on input line
 \subfigcapwidth=\dimen185
 \subcapindent=\dimen186
 )
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+)
 
 LaTeX Warning: Unused global option(s):
     [bwlinks].
@@ -654,27 +660,27 @@ LaTeX Warning: Unused global option(s):
 (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 76.
-LaTeX Font Info:    Try loading font information for LGR+cmr on input line 76.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 94.
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 94.
  (/usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 76.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 94.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
@@ -718,7 +724,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 76.
+Package hyperref Info: Link coloring ON on input line 94.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -728,9 +734,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count152
 )
-LaTeX Info: Redefining \ref on input line 76.
-LaTeX Info: Redefining \pageref on input line 76.
-LaTeX Info: Redefining \nameref on input line 76.
+LaTeX Info: Redefining \ref on input line 94.
+LaTeX Info: Redefining \pageref on input line 94.
+LaTeX Info: Redefining \nameref on input line 94.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write4
@@ -771,51 +777,51 @@ LaTeX Info: Redefining \nameref on input line 76.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count153
-LaTeX Font Info:    Try loading font information for OT1+zpple on input line 76
+LaTeX Font Info:    Try loading font information for OT1+zpple on input line 94
 .
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zpple.fd
 File: ot1zpple.fd 1999/12/20 Fontinst v1.801 font definitions for OT1/zpple.
 )
-LaTeX Font Info:    Try loading font information for OML+zpple on input line 76
+LaTeX Font Info:    Try loading font information for OML+zpple on input line 94
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzpple.fd
 File: omlzpple.fd 1999/12/20 Fontinst v1.801 font definitions for OML/zpple.
 )
-LaTeX Font Info:    Try loading font information for OMS+zpple on input line 76
+LaTeX Font Info:    Try loading font information for OMS+zpple on input line 94
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszpple.fd
 File: omszpple.fd 1999/12/20 Fontinst v1.801 font definitions for OMS/zpple.
 )
-LaTeX Font Info:    Try loading font information for OMX+zpple on input line 76
+LaTeX Font Info:    Try loading font information for OMX+zpple on input line 94
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzpple.fd
 File: omxzpple.fd 1999/12/20 Fontinst v1.801 font definitions for OMX/zpple.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 76.
+(Font)              scaled to size 12.50409pt on input line 94.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 76.
+(Font)              scaled to size 9.37807pt on input line 94.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 76.
+(Font)              scaled to size 7.29405pt on input line 94.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 76.
+(Font)              scaled to size 12.50409pt on input line 94.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 76.
+(Font)              scaled to size 9.37807pt on input line 94.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 76.
-Package xypdf Info: Line width: 0.47987pt on input line 76.
+(Font)              scaled to size 7.29405pt on input line 94.
+Package xypdf Info: Line width: 0.47987pt on input line 94.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<./figures/poli.pdf, id=156, 614.295pt x 794.97pt>
+<./figures/poli.pdf, id=164, 614.295pt x 794.97pt>
 File: ./figures/poli.pdf Graphic file (type pdf)
 <use ./figures/poli.pdf>
-Package pdftex.def Info: ./figures/poli.pdf  used on input line 97.
+Package pdftex.def Info: ./figures/poli.pdf  used on input line 115.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 97.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 115.
  [1
 
 
@@ -824,7 +830,7 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
 
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 104.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 122.
  [1
 
 
@@ -852,73 +858,87 @@ Chapter 1.
 ]
 Chapter 2.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 123.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 141.
 [3] [4
 
 ]
 Chapter 3.
 [5] [6]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 144.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 162.
  [7] [8]
-<figures/StreamItFilter.png, id=271, 225.84375pt x 73.27374pt>
+<figures/StreamItFilter.png, id=281, 225.84375pt x 73.27374pt>
 File: figures/StreamItFilter.png Graphic file (type png)
 <use figures/StreamItFilter.png>
-Package pdftex.def Info: figures/StreamItFilter.png  used on input line 179.
+Package pdftex.def Info: figures/StreamItFilter.png  used on input line 197.
 (pdftex.def)             Requested size: 209.12683pt x 67.85428pt.
-<figures/StreamItPipeline.png, id=273, 244.915pt x 100.375pt>
+<figures/StreamItPipeline.png, id=283, 244.915pt x 100.375pt>
 File: figures/StreamItPipeline.png Graphic file (type png)
 <use figures/StreamItPipeline.png>
-Package pdftex.def Info: figures/StreamItPipeline.png  used on input line 191.
+Package pdftex.def Info: figures/StreamItPipeline.png  used on input line 209.
 (pdftex.def)             Requested size: 209.12683pt x 85.70969pt.
-<figures/StreamItSplitJoin.png, id=274, 277.035pt x 140.525pt>
+<figures/StreamItSplitJoin.png, id=284, 277.035pt x 140.525pt>
 File: figures/StreamItSplitJoin.png Graphic file (type png)
 <use figures/StreamItSplitJoin.png>
-Package pdftex.def Info: figures/StreamItSplitJoin.png  used on input line 204.
+Package pdftex.def Info: figures/StreamItSplitJoin.png  used on input line 222.
 
 (pdftex.def)             Requested size: 209.12683pt x 106.07964pt.
  [9 <./figures/StreamItFilter.png> <./figures/StreamItPipeline.png>]
-<figures/StreamItFeedbackLoop.png, id=285, 281.05pt x 121.45375pt>
+<figures/StreamItFeedbackLoop.png, id=295, 281.05pt x 121.45375pt>
 File: figures/StreamItFeedbackLoop.png Graphic file (type png)
 <use figures/StreamItFeedbackLoop.png>
 Package pdftex.def Info: figures/StreamItFeedbackLoop.png  used on input line 2
-18.
+36.
 (pdftex.def)             Requested size: 209.12683pt x 90.37286pt.
  [10 <./figures/StreamItSplitJoin.png> <./figures/StreamItFeedbackLoop.png>] [1
 1]
-<figures/Vitis-AI-Stack.png, id=301, 619.31375pt x 532.99126pt>
+<figures/Vitis-AI-Stack.png, id=311, 619.31375pt x 532.99126pt>
 File: figures/Vitis-AI-Stack.png Graphic file (type png)
 <use figures/Vitis-AI-Stack.png>
-Package pdftex.def Info: figures/Vitis-AI-Stack.png  used on input line 259.
+Package pdftex.def Info: figures/Vitis-AI-Stack.png  used on input line 277.
 (pdftex.def)             Requested size: 209.12683pt x 179.97844pt.
 
 Underfull \vbox (badness 2285) has occurred while \output is active []
 
  [12]
 [13 <./figures/Vitis-AI-Stack.png>] [14] [15]
-<figures/HalideCompilerStack.png, id=327, 1435.3625pt x 130.4875pt>
+<figures/HalideCompilerStack.png, id=337, 1435.3625pt x 130.4875pt>
 File: figures/HalideCompilerStack.png Graphic file (type png)
 <use figures/HalideCompilerStack.png>
-Package pdftex.def Info: figures/HalideCompilerStack.png  used on input line 32
-0.
+Package pdftex.def Info: figures/HalideCompilerStack.png  used on input line 33
+8.
 (pdftex.def)             Requested size: 418.25368pt x 38.02158pt.
- [16] [17 <./figures/HalideCompilerStack.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18]
-[19] [20
+ [16] [17 <./figures/HalideCompilerStack.png>] [18]
+Chapter 4.
+[19
 
 ]
-Chapter 4.
-[21] [22] [23] [24
+<figures/Stack.png, id=358, 845.1575pt x 597.73312pt>
+File: figures/Stack.png Graphic file (type png)
+<use figures/Stack.png>
+Package pdftex.def Info: figures/Stack.png  used on input line 387.
+(pdftex.def)             Requested size: 418.25368pt x 295.8104pt.
+ [20] [21 <./figures/Stack.png>]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 413.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 413.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+) [22] [23] [24]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25]
+[26] [27] [28
 
 ] (./thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [25
+ [29
 
-] [26
+] [30
 
 ] (./thesis.lot)
 \tf@lot=\write7
@@ -926,46 +946,47 @@ Chapter 4.
 
 
 No file thesis.ind.
-[27] [28
+[31] [32
 
 ]
 
-Package natbib Warning: Empty `thebibliography' environment on input line 407.
+Package natbib Warning: Empty `thebibliography' environment on input line 541.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 409.
-[29]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 409.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 543.
+[33]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 543.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 409.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 409.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 543.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 543.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 900A81AAC3BC73FA3AB32B4C758772BA;2510.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 409.
+(rerunfilecheck)             Checksum: 866DB0C61798707604D87DE6D5E15E00;2663.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 543.
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 81 ({)
+### simple group (level 1) entered at line 99 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 13930 strings out of 494847
- 199095 string characters out of 6179081
- 331039 words of memory out of 5000000
- 16864 multiletter control sequences out of 15000+600000
- 34531 words of font info for 78 fonts, out of 8000000 for 9000
+ 14513 strings out of 494847
+ 205557 string characters out of 6179081
+ 386890 words of memory out of 5000000
+ 17367 multiletter control sequences out of 15000+600000
+ 35776 words of font info for 80 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 35i,13n,51p,3217b,649s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palati
-no/uplri8a.pfb>
-Output written on thesis.pdf (37 pages, 538266 bytes).
+ 35i,13n,51p,3217b,2138s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/marco/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/e
+c/ectt1095.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palat
+ino/uplri8a.pfb>
+Output written on thesis.pdf (41 pages, 594086 bytes).
 PDF statistics:
- 446 PDF objects out of 1000 (max. 8388607)
- 384 compressed objects within 4 object streams
- 90 named destinations out of 1000 (max. 500000)
- 340 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 599 PDF objects out of 1000 (max. 8388607)
+ 487 compressed objects within 5 object streams
+ 159 named destinations out of 1000 (max. 500000)
+ 361 words of extra memory for PDF output out of 10000 (max. 10000000)
 
