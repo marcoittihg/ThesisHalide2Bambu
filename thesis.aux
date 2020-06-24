@@ -101,7 +101,10 @@
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {4.2}Example of optimized IR. The complex operation of the previous example has been split into simple operations. Intermediate results that are shared among different iterations and memory accesses has been pushed outside}{24}{lstlisting.4.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Code generation}{26}{subsection.4.3.3}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {4.3}Output C code of the example filter. The Halide IR has been translated to C code and encapsulated. Since the filter compute only one value a return statement has been added at the end of the function.}{26}{lstlisting.4.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Conclusions}{27}{section.4.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Parallel and vectorized operations}{27}{section.4.4}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.4}Example of coarse grained parallelism exploited by parallelizing independent iterations. The final model will perform each iteration of the for loop on different resources.}{27}{lstlisting.4.4}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.5}Example of vector multiplication exploiting vectorized operations. In this example the multiply operation is performed on small arrays representing vectors of 8 elements.}{27}{lstlisting.4.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Conclusions}{28}{section.4.5}}
 \citation{*}
 \@writefile{toc}{\contentsline {chapter}{List of Figures}{29}{section*.11}}
 \@writefile{toc}{\contentsline {chapter}{List of Tables}{31}{section*.12}}

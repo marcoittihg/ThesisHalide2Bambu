@@ -512,6 +512,35 @@ float X_im_padded_U_sum_3_fun_0(float b0[18], float b2[18],
 
 The result is the set of final filters written in C language and ready to be deployed.
 
+\section{Parallel and vectorized operations}
+An important factor that influence the performance of the schedule on the target architecture is how to handle coarse and fine grained parallelism.
+In the halide infrastructure coarse grained parallelism is represented by parallel loops that represent pieces of computation that can be performed independently without modifying the correctness of the output buffers.
+Fine grained parallelism is represented by vectorized operations on vectors.
+
+To handle coarse grained parallelism PandA-Bambu allow the definition of for loops parallelized with the \#pragma omp for directive. This allow to perform each independent iteration in parallel on different HW resources.
+
+\begin{lstlisting}[caption = Example of coarse grained parallelism exploited by parallelizing independent iterations. The final model will perform each iteration of the for loop on different resources.]
+    #pragma omp for
+    for(unsigned int x_0 = (0); x_0 < (0 + 53); x_0++){
+        _conv1_2_0_fun_0(b0, conv1_2_0, b1, data_0, x_0);
+    }
+\end{lstlisting}
+
+Fine grained parallelism is handled by performing vectorized operations on small arrays. The usage of vectorized operations on simple independent operations allow to exploit the advantage of FPGA platforms on fine grained operations.
+
+\begin{lstlisting}[caption = Example of vector multiplication exploiting vectorized operations. In this example the multiply operation is performed on small arrays representing vectors of 8 elements.]
+void _Z_fun_0(float X_im_0[8], float Y_im_1[8], float Z[8]){
+    int32_t _0[8] = {0, 1, 2, 3, 4, 5, 6, 7};
+    float _1[8];
+    load_vector<float, int32_t, 8>(_1, X_im_0, _0);
+    float _2[8];
+    load_vector<float, int32_t, 8>(_2, Y_im_1, _0);
+    float _3[8];
+    binary_op<float, float, 8, std::multiplies<float>>(_3, _1, _2);
+    store_vector<float, int32_t, 8>(Z, _3, _0);
+}
+\end{lstlisting}
+
 \section{Conclusions}
 In this section we described the structure of the design flow. We described the steps necessary to optimize and deploy a DL models using the ONNX representation, the Halide infrastructure and PandA-Bambu as HLS tool. We described how is the Halide Bambu codegen structured and how it work.
 
