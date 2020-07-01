@@ -3,12 +3,21 @@
 \babel@toc {english}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Comparison between the Traditional Programming approach and the Machine Learning approach}}{5}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Perceptron model}}{6}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Sigmoid (a) and Tanh (b) functions}}{6}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Example of Multi-layer Perceptron network}}{7}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Relu (a) and Leaky ReLU (b) functions. }}{8}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Horizontal derivative obtained by performing the convolution between the image and the horizontal Sobel operator}}{9}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Examples of 2D convolution (a) and AVG Pool operation (b). https://arxiv.org/abs/1603.07285}}{10}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces LeNet-5 architecture. Used to recognize hand written digit in 28x28 gray scale images.}}{11}{figure.2.8}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Example of ONNX model. The computational graph is represented as a set of interconnected operations.}}{13}{figure.2.9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces StreamIt Filter}}{9}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces StreamIt Pipeline}}{9}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces StreamIt SplitJoin}}{10}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces StreamIt Feedback Loop}}{10}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Vitis AI stack}}{13}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Halide stack}}{17}{figure.3.6}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces StreamIt Filter}}{19}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces StreamIt Pipeline}}{19}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces StreamIt SplitJoin}}{20}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces StreamIt Feedback Loop}}{20}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Vitis AI stack}}{23}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Halide stack}}{27}{figure.3.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Design Flow}}{21}{figure.4.1}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Design Flow}}{31}{figure.4.1}

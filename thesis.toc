@@ -5,54 +5,61 @@
 \contentsline {chapter}{Ringraziamenti}{{\fontencoding {T1}\selectfont III}}{chapter*.2}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Definitions}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Conclusions}{3}{section.2.1}
-\contentsline {chapter}{\numberline {3}State of the art}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}Chapter structure}{6}{section.3.1}
-\contentsline {section}{\numberline {3.2}StreamIt}{6}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Streaming Application Domain}{7}{subsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.1.1}Large stream of data}{7}{subsubsection.3.2.1.1}
-\contentsline {paragraph}{Large stream of data}{7}{subsubsection.3.2.1.1}
-\contentsline {subsubsection}{\numberline {3.2.1.2}Independent stream filters}{7}{subsubsection.3.2.1.2}
-\contentsline {paragraph}{Independent stream filters}{7}{subsubsection.3.2.1.2}
-\contentsline {subsubsection}{\numberline {3.2.1.3}Stable computation pattern}{7}{subsubsection.3.2.1.3}
-\contentsline {paragraph}{Stable computation pattern}{7}{subsubsection.3.2.1.3}
-\contentsline {subsubsection}{\numberline {3.2.1.4}Occasional out-of-stream communication}{8}{subsubsection.3.2.1.4}
-\contentsline {paragraph}{Occasional out-of-stream communication}{8}{subsubsection.3.2.1.4}
-\contentsline {subsubsection}{\numberline {3.2.1.5}High performance expectations}{8}{subsubsection.3.2.1.5}
-\contentsline {paragraph}{High performance expectations}{8}{subsubsection.3.2.1.5}
-\contentsline {subsection}{\numberline {3.2.2}Streamit Program}{8}{subsection.3.2.2}
-\contentsline {paragraph}{Filter}{8}{section*.4}
-\contentsline {paragraph}{Pipeline}{9}{section*.5}
-\contentsline {paragraph}{SplitJoin}{9}{section*.6}
-\contentsline {paragraph}{Feedback loop}{10}{section*.7}
-\contentsline {subsection}{\numberline {3.2.3}Compilation Infrastructure}{10}{subsection.3.2.3}
-\contentsline {subsubsection}{\numberline {3.2.3.1}Stream Graph Scheduling}{11}{subsubsection.3.2.3.1}
-\contentsline {paragraph}{Stream Graph Scheduling}{11}{subsubsection.3.2.3.1}
-\contentsline {subsubsection}{\numberline {3.2.3.2}Partitioning}{11}{subsubsection.3.2.3.2}
-\contentsline {paragraph}{Partitioning}{11}{subsubsection.3.2.3.2}
-\contentsline {subsubsection}{\numberline {3.2.3.3}Layout}{12}{subsubsection.3.2.3.3}
-\contentsline {paragraph}{Layout}{12}{subsubsection.3.2.3.3}
-\contentsline {subsubsection}{\numberline {3.2.3.4}Communication scheduler}{12}{subsubsection.3.2.3.4}
-\contentsline {paragraph}{Communication scheduler}{12}{subsubsection.3.2.3.4}
-\contentsline {section}{\numberline {3.3}VitisAI}{13}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Optimization tools}{13}{subsection.3.3.1}
-\contentsline {paragraph}{AIOptimizer}{13}{section*.8}
-\contentsline {paragraph}{AIQuantizer}{14}{section*.9}
-\contentsline {paragraph}{AICompiler}{14}{section*.10}
-\contentsline {section}{\numberline {3.4}Halide}{14}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Algorithm definition}{14}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Schedule definition}{15}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Halide Compiler}{16}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Deep learning applications}{18}{subsection.3.4.4}
-\contentsline {chapter}{\numberline {4}From ONNX model to Bambu HLS}{19}{chapter.4}
-\contentsline {section}{\numberline {4.1}Motivations}{20}{section.4.1}
-\contentsline {section}{\numberline {4.2}Design flow}{20}{section.4.2}
-\contentsline {section}{\numberline {4.3}The Bambu back-end}{22}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Filters extraction}{22}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}IR optimizations}{23}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Code generation}{26}{subsection.4.3.3}
-\contentsline {section}{\numberline {4.4}Parallel and vectorized operations}{27}{section.4.4}
-\contentsline {section}{\numberline {4.5}Conclusions}{28}{section.4.5}
-\contentsline {chapter}{List of Figures}{29}{section*.11}
-\contentsline {chapter}{List of Tables}{31}{section*.12}
-\contentsline {chapter}{Bibliography}{33}{section*.13}
+\contentsline {section}{\numberline {2.1}Artificial Intelligence and Machine Learning}{4}{section.2.1}
+\contentsline {section}{\numberline {2.2}Artificial Neural Networks}{5}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Vanilla neural networks}{6}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}ANN Training}{7}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Deep learning and Convolutitional Neural Networks}{8}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}DL accelerators}{10}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}ONNX}{13}{section.2.3}
+\contentsline {section}{\numberline {2.4}Conclusions}{14}{section.2.4}
+\contentsline {chapter}{\numberline {3}State of the art}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Chapter structure}{16}{section.3.1}
+\contentsline {section}{\numberline {3.2}StreamIt}{16}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Streaming Application Domain}{17}{subsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.1.1}Large stream of data}{17}{subsubsection.3.2.1.1}
+\contentsline {paragraph}{Large stream of data}{17}{subsubsection.3.2.1.1}
+\contentsline {subsubsection}{\numberline {3.2.1.2}Independent stream filters}{17}{subsubsection.3.2.1.2}
+\contentsline {paragraph}{Independent stream filters}{17}{subsubsection.3.2.1.2}
+\contentsline {subsubsection}{\numberline {3.2.1.3}Stable computation pattern}{17}{subsubsection.3.2.1.3}
+\contentsline {paragraph}{Stable computation pattern}{17}{subsubsection.3.2.1.3}
+\contentsline {subsubsection}{\numberline {3.2.1.4}Occasional out-of-stream communication}{18}{subsubsection.3.2.1.4}
+\contentsline {paragraph}{Occasional out-of-stream communication}{18}{subsubsection.3.2.1.4}
+\contentsline {subsubsection}{\numberline {3.2.1.5}High performance expectations}{18}{subsubsection.3.2.1.5}
+\contentsline {paragraph}{High performance expectations}{18}{subsubsection.3.2.1.5}
+\contentsline {subsection}{\numberline {3.2.2}Streamit Program}{18}{subsection.3.2.2}
+\contentsline {paragraph}{Filter}{18}{section*.4}
+\contentsline {paragraph}{Pipeline}{19}{section*.5}
+\contentsline {paragraph}{SplitJoin}{19}{section*.6}
+\contentsline {paragraph}{Feedback loop}{20}{section*.7}
+\contentsline {subsection}{\numberline {3.2.3}Compilation Infrastructure}{20}{subsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Stream Graph Scheduling}{21}{subsubsection.3.2.3.1}
+\contentsline {paragraph}{Stream Graph Scheduling}{21}{subsubsection.3.2.3.1}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Partitioning}{21}{subsubsection.3.2.3.2}
+\contentsline {paragraph}{Partitioning}{21}{subsubsection.3.2.3.2}
+\contentsline {subsubsection}{\numberline {3.2.3.3}Layout}{22}{subsubsection.3.2.3.3}
+\contentsline {paragraph}{Layout}{22}{subsubsection.3.2.3.3}
+\contentsline {subsubsection}{\numberline {3.2.3.4}Communication scheduler}{22}{subsubsection.3.2.3.4}
+\contentsline {paragraph}{Communication scheduler}{22}{subsubsection.3.2.3.4}
+\contentsline {section}{\numberline {3.3}VitisAI}{23}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Optimization tools}{23}{subsection.3.3.1}
+\contentsline {paragraph}{AIOptimizer}{23}{section*.8}
+\contentsline {paragraph}{AIQuantizer}{24}{section*.9}
+\contentsline {paragraph}{AICompiler}{24}{section*.10}
+\contentsline {section}{\numberline {3.4}Halide}{24}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Algorithm definition}{24}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Schedule definition}{25}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Halide Compiler}{26}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Deep learning applications}{28}{subsection.3.4.4}
+\contentsline {chapter}{\numberline {4}Proposed design flow}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}Motivations}{30}{section.4.1}
+\contentsline {section}{\numberline {4.2}Design flow}{30}{section.4.2}
+\contentsline {section}{\numberline {4.3}The Bambu back-end}{32}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Filters extraction}{32}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}IR optimizations}{33}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Code generation}{36}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}Parallel and vectorized operations}{37}{section.4.4}
+\contentsline {section}{\numberline {4.5}Conclusions}{38}{section.4.5}
+\contentsline {chapter}{List of Figures}{39}{section*.11}
+\contentsline {chapter}{List of Tables}{41}{section*.12}
+\contentsline {chapter}{Bibliography}{43}{section*.13}
