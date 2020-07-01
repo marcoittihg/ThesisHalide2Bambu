@@ -124,14 +124,14 @@
 \addcontentsline{toc}{chapter}{Abstract}
 
 Recent advances in the AI field and the increasing computational power of HW accelerators have renewed the interest in how Machine Learning models can be used to solve abstract problems. 
-In particolar the Deep Learning field are powerful biologically inspired models that model how the model process sensory information. 
-Deep Learnings models achieve outstanding results in application where high dimensional data processing is needed and promise to solve yet unsolved problems such as medical diagnosis and autonomous driving.
+In particular the Deep Learning field are powerful biologically inspired models that model how the model process sensory information. 
+Deep Learning models achieve outstanding results in application where high dimensional data processing is needed and promise to solve yet unsolved problems such as medical diagnosis and autonomous driving.
 
 Since Deep Learning models require intensive computational power researchers started using HW accelerated solutions to overcome the shortage of computational power and use more powerful models with more parameters.
 The first target that has been used to accelerate Deep Learning applications are GPGPUs and many software frameworks are built with the intention of leveraging the SIMD parallelism provided by feed forward configurations.
 
 Due to interest in sparse configurations and recent advances in High Level Synthesis tools the research started considering FPGAs as HW accelerators. 
-FPGAs are interesting solutions to deploy Deep models; their power efficiency and reconfigurability are itneresting characteristics but the design process is slow, error prone and require knowledge about low-level hardware description languages.
+FPGAs are interesting solutions to deploy Deep models; their power efficiency and reconfigurability are interesting characteristics but the design process is slow, error prone and require knowledge about low-level hardware description languages.
 The use of High Level Synthesis Tools allow non HW experts to use FPGAs while allowing the programmer to prototype different models before deciding which one best fit the target application.
 
 This thesis proposes a design flow for the implementation of Deep Learning model on FPGAs; the design flow rely on the ONNX IR to provide a common entry point for the most common Deep Learning frameworks.
@@ -150,31 +150,30 @@ Ringraziamenti
 \chapter{Introduction}
 Due to recent advances in AI and the creation of credible datasets the Deep Learning field has put an end to the AI Winter by achieving outstanding results in problems that were considered as exclusive domain of human intelligence just few years before.
 Artificial Neural Networks are powerful models that model what we know about how the brain process information coming from the outside world. 
-Composed by an interconnected network of artificial neurons, ANNs model the firing mechanism of real neurons; the axon transmit accumulated charges through synapses and once the charge is above a certain treshold the neuron fires.
+Composed by an interconnected network of artificial neurons, ANNs model the firing mechanism of real neurons; the axon transmit accumulated charges through synapses and once the charge is above a certain threshold the neuron fires.
 
 Deep Learning is the evolution of classic Artificial Neural Networks. 
 Since the brain use different structures to perform different tasks a DL model organize the network as a sequence of interconnected layers; each layer implement different mechanisms useful for specific contexts.
 One example is the use of convolution layers in Convolutional Neural Networks.
-In the animal brain the visual cortex organize neurons in a hirearchical structure; neurons closer to the optic nerve are activated by simple features and neurons at higher levels are activated by more complex features and situations.
+In the animal brain the visual cortex organize neurons in a hierarchical structure; neurons closer to the optic nerve are activated by simple features and neurons at higher levels are activated by more complex features and situations.
 CNNs are inspired by such mechanism; the model is organized as a sequence of convolutional layers that extract features of increasing complexity.
 
 The state of the art Deep Learning models are able to achieve outstanding results in image, word and speech processing applications but the number of neurons used by DL models is far smaller than the number of neurons present in a human brain.
 In an animal brain the number of neurons is in the order of $10^{11}$ with $10^4$ synapses per neuron while the most complicated Deep Learning models use at best millions of parameters($10^6$ - $10^9$).
 
-Since hardware solutions are able to deliver performances of orders of magnitude higher than programmable architecures, research efforts have been directed toward developing HW accelerated solutions to train and deploy bigger and more powerful models.
+Since hardware solutions are able to deliver performances of orders of magnitude higher than programmable architectures, research efforts have been directed toward developing HW accelerated solutions to train and deploy bigger and more powerful models.
 One possible solution to accelerate Deep Learning application is the use of Field Programmable Gate Arrays composed by simple reconfigurable blocks.
 The HW reconfigurability of FPGAs make them a suitable target to implement sparse models with extremely tailored floating point precision.
 
-An other big advantage of FPGA-based solution is the power efficiency; FPGAs maximize performance per watt of energy and the reduction of floating point precision allow to decrease the size of memory buffer thus reducing the amount of energy used to perform memory transfers.
+An other advantage of FPGA-based solution is the power efficiency; FPGAs maximize performance per watt of energy and the reduction of floating point precision allow to decrease the size of memory buffer thus reducing the amount of energy used to perform memory transfers.
 The disadvantages of FPGA-based solutions are usually limited to the long design time and High Level Synthesis solutions has been developed to overcome this problem.
 
-This thesis proposes a design flow to ease the deployement of Deep Learning model on FPGA targets. 
+This thesis proposes a design flow to ease the deployment of Deep Learning model on FPGA targets. 
 By exploiting the Halide compilation infrastructure and the PandA-Bambu HLS framework the design flow start from the ONNX intermediate representation of a Deep Learning model and produce the RTL Description necessary for the deployment.
 By using the Halide infrastructure the computation can be optimized by finding the right schedule for the target FPGA and specific application.
-The schedule can be designed to find the right trade-off between memory locality, parallelism and storage granularity; this allow to find the scheule that satisfy application specific constraints such as maximum latency, minimum throughput and maximum power consumption.
+The schedule can be designed to find the right trade-off between memory locality, parallelism and storage granularity; this allow to find the schedule that satisfy application specific constraints such as maximum latency, minimum throughput and maximum power consumption.
 
 The thesis is organized as follows: Chapter 2 provide an introduction to the field of Artificial Intelligence, Artificial Neural Networks and Deep Learning. Chapter 3 review state of the art frameworks related to the work of the thesis. Chapter 4 describe the proposed design flow and the Bambu back-end implemented as part of the Halide infrastructure.
-
 
 
 \chapter{Definitions}
@@ -327,7 +326,7 @@ For example when performing the edge detection the Canny edge detection algorith
   \subfigure{\label{fig:Cameraman}\includegraphics[width=.35\linewidth]{figures/Cameraman.png}}
   \hspace{1cm}
   \subfigure{\label{fig:CameramanDx}\includegraphics[width=.35\linewidth]{figures/CameramanDx.png}}
-  \caption{Horizontal derivative obtained by performing the convolution between the image and the horizontal Sobel operator}
+  \caption{Horizontal derivative with Sobel operator}
   \label{fig:Cameraman}
 \end{figure}
 
@@ -355,7 +354,7 @@ The CNN topology is inspired by how the animal visual cortex work; multiple neur
 \begin{figure}[h!]
   \includegraphics[width=0.9\textwidth]{figures/lenet.jpg}
   \centering
-  \caption{LeNet-5 architecture. Used to recognize hand written digit in 28x28 gray scale images.}
+  \caption{LeNet-5 architecture. Hand written digit recognition in 28x28 gray scale images.}
   \label{fig:lenet}
 \end{figure}
 
@@ -400,7 +399,7 @@ Since the DL field is realively new there is no established intermediate represe
 \begin{figure}[h!]
   \includegraphics[width=0.9\textwidth]{figures/ONNXExample.png}
   \centering
-  \caption{Example of ONNX model. The computational graph is represented as a set of interconnected operations.}
+  \caption{Example of ONNX model.}
   \label{fig:onnx-example}
 \end{figure}
 
