@@ -1,0 +1,189 @@
+\documentclass[11pt, a4paper, twoside, openright]{report}
+\usepackage[italian, english]{babel}
+\usepackage[a4paper, pdftex, left=0.18\paperwidth, right=0.18\paperwidth, top=4cm, height=0.7\paperheight, footskip=42pt]{geometry}
+
+\setlength{\parindent}{0pt}
+\usepackage{url}
+\usepackage{graphicx}
+\graphicspath{{images/}{../images/}}
+\usepackage[font={small, sf, it}]{caption}
+\usepackage{multirow}
+\setlength{\skip\footins}{2em}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[urldate=comp]{biblatex}
+\usepackage{csquotes}
+\addbibresource{quotes.bib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{subfiles}
+\usepackage{subcaption}
+\usepackage[nottoc]{tocbibind}
+
+\renewcommand\thefootnote{\textcolor{blue}{\arabic{footnote}}}
+
+\usepackage{tikz}
+\usetikzlibrary{fit}
+\usetikzlibrary{matrix,shapes,positioning,patterns,backgrounds,fit,arrows,calc}
+\usetikzlibrary{graphs,graphs.standard,quotes}
+\tikzstyle{function}=[inner sep=2pt, font = \footnotesize\strut, draw, text centered, minimum size=0.6cm, rounded corners]
+\tikzstyle{state}=[inner sep=2pt, font = \footnotesize\strut\sffamily, draw, text centered, minimum size=0.6cm, rounded corners, align=center]
+\tikzset{every loop/.append style={-latex}}
+\usepackage{ifthen}
+\usepackage{fp}
+\usepackage{pgfbaselayers}
+
+\pgfdeclarelayer{behind}
+\pgfdeclarelayer{foreground}
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,behind,main,foreground}
+
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+\usepackage{arydshln}
+
+\usepackage{amssymb}
+
+\lstset{frame=tb,
+  language=C,
+  aboveskip=1mm,
+  belowskip=1mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  keywordstyle=\color{blue},
+  commentstyle=\color[rgb]{0.0,0.4,0.0},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4,
+  emph={%  
+    int32_t, float32%
+    },emphstyle={\color{blue}}%
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+\setlength{\parskip}{1em}
+{\bfseries
+\begin{center}
+
+\large
+POLITECNICO DI MILANO\\
+\normalsize
+Corso di Laurea Magistrale in Ingegneria dell’Informazione \\
+Corso di laurea in Ingegneria Informatica \par
+  
+\vspace{3em}
+  
+  \begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[width=3.5cm]{logopm.png}
+    \end{center}
+  \end{figure}
+  \vspace*{0.3cm} \Large
+  \textbf{A DESIGN FLOW BASED ON HALIDE AND BAMBU-HLS TO DEPLOY DEEP LEARNING MODELS ON FPGA}\\
+
+\end{center}
+\vspace*{3.0cm} \large
+\begin{flushleft}
+
+  Relatore: Prof. Fabrizio Ferrandi
+
+\end{flushleft}
+\vspace*{1cm}
+\begin{flushright}
+
+  Tesi di Laurea di:\\ Ghitti Marco, matricola 893986
+\end{flushright}
+\vspace*{1cm}
+\begin{center}
+
+  Anno Accademico 2019-2020
+\end{center} \clearpage
+}
+
+\thispagestyle{empty}
+\null
+\newpage
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+Recent advances in the Artificial Intelligence field and the increasing computational power of HW accelerators have renewed the interest in Machine Learning models.
+In particular the field is interested in Deep Learning models, powerful biologically inspired models that model how the model process sensory information to solve problems where defining an explicit algorithm is not a viable solution. 
+Deep Learning models achieve outstanding results in application where high dimensional data processing is needed and have the potential to solve yet unsolved problems such as medical diagnosis and autonomous driving.
+
+Since Deep Learning models require intensive computational power researchers started using HW accelerated solutions to overcome the shortage of computational power and use more powerful models with more parameters.
+The first target that has been used to accelerate Deep Learning applications are GPGPUs and many software frameworks are built with the intention of leveraging the SIMD parallelism provided by feed forward configurations.
+
+Due to interest in sparse configurations and recent advances in High Level Synthesis tools the research started considering FPGAs as HW accelerators. 
+FPGAs are interesting solutions to deploy Deep models; their power efficiency and reconfigurability are interesting characteristics but the design process is slow, error prone and require knowledge about low-level hardware description languages.
+The use of High Level Synthesis Tools allow non HW experts to use FPGAs while allowing the programmer to prototype different models before deciding which one best fit the target application.
+
+This thesis proposes a design flow for the implementation of Deep Learning model on FPGAs; the design flow rely on the ONNX IR to provide a common entry point for the most common Deep Learning frameworks.
+The ONNX model is then passed to the Halide compilation infrastructure that decide how the computation is going to be performed on the target FPGA and produce a software description.
+The software description is then passed to the PandA-Bambu framework \cite{PandA-Bambu} that translate the input C code into hardware descriptive code, ready to be deployed.
+\newpage
+
+\section*{Abstract in italiano}
+
+Recenti miglioramenti nel campo dell'Intelligenza artificiale e l'aumento della capacità computazionale dei metodi di accelerazione HW hanno rinnovato l'interesse nell'utilizzo di modelli basati sull'apprendimento macchina (Machine Learning).
+In particolare l'intelligenza aritificiale è interessata alle "reti neurali profonde" (Deep Learning), modelli ispirati da come il cervello animale processa le informazioni sensoriali per risolvere problemi dove definire un algoritmo esplicito non è una soluzione praticabile.
+I modelli basati su reti neurali profonde ottengono risultati eccezionali in applicazioni che richiedono analisi di dati complessi e hanno il potenziale per risolvere problemi come la guida autonoma e l'analisi di immagini mediche.
+
+Dato che le reti neurali profonde richiedono crescenti performance la ricerca ha deciso di utilizzare soluzioni HW per superare la carenza di potenza di calcolo delle CPU e poter'così utilizzare modelli più complessi e con più parametri.
+I primi acceleratori hardware che sono stati utilizzati per accelerare le reti neurali profonde sono le GPGPU e molti framework software sono stati costruiti con l'intenzione di utilizzare le potenzialità HW delle GPU.
+
+A causa dell'interesse in reti neurali sparse e i recenti miglioramenti dei metodi di sintesi ad alto livello (HLS) la ricerca ha cominciato a considerare le FPGA come acceleratori HW.
+Le FPGA sono una soluzione interessante per eseguire i modelli Deep learning; l'efficienza energetica e la riconfigurabilità HW sono caratteristiche interessanti ma il processo di design è lento, è facile commettere errori e richiede conoscenza dell'hardware.
+L'utilizzo di metodi di sintesi ad alto livello permette a non esperti HW di utilizzare le FPGA permettendo inoltre di testare vari prototipi prima di decidere quale modello utilizzare.
+
+Questa tesi propone un processo per implementare reti neurali profonde su FPGA; il design utilizza ONNX come punto di ingresso comune per diversi framework.
+Il modello ONNX viene poi passato ad Halide per produrre una descrizione software ottimizzata da utilizzare con Bambu-HLS.
+Il risultato finale è la descrizione hardware pronta per essere implementata su FPGA.
+
+
+\begin{otherlanguage}{italian}
+
+\newpage
+
+\chapter*{Ringraziamenti}
+\addcontentsline{toc}{chapter}{Ringraziamenti}  
+
+Alle fine del mio percorso di studi voglior ringrazie la mia famiglia.
+
+In particolare voglio ringrazie i miei genitori che mi hanno sempre sostenuto durante tutti i miei anni di studi.
+
+\newpage
+
+\end{otherlanguage}
+
+\setlength{\parskip}{0.5em}
+\tableofcontents
+
+\setlength{\parskip}{1em}
+\chapter{Introduction}
+\subfile{chapters/1_intro.tex}
+
+\chapter{Definitions}
+\subfile{chapters/2_definitions.tex}
+
+\chapter{State of the art summary}
+\subfile{chapters/3_soa.tex}
+
+\chapter{Design flow}
+\subfile{chapters/4_solution.tex}
+
+\chapter{Conclusions and future developments}
+\subfile{chapters/5_end.tex}
+
+\setlength{\parskip}{0.3em}
+\listoffigures
+%\listoftables
+
+
+\printbibliography[heading=bibintoc]
+
+\end{document}
