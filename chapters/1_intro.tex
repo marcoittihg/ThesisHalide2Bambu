@@ -2,32 +2,31 @@
 
 \begin{document}
 
-Due to recent advances in AI and the creation of credible datasets the Deep Learning field has put an end to the AI Winter by achieving outstanding results in problems that were considered as exclusive domain of human intelligence just few years before.
+Due to recent advances in AI and the creation of credible datasets the Deep Learning field has put an end to the AI Winter by achieving outstanding results in problems that were considered as an exclusive domain of human intelligence just a few years before.
 Artificial Neural Networks are powerful models that model what we know about how the brain process information coming from the outside world. 
-Composed by an interconnected network of artificial neurons, ANNs model the firing mechanism of real neurons; the axon transmit accumulated charges through synapses and once the charge is above a certain threshold the neuron fires.
+Composed by an interconnected network of artificial neurons, ANNs model the firing mechanism of real neurons; the axon transmits accumulated charges through synapses and once the charge is above a certain threshold the neuron fires.
 
 Deep Learning is the evolution of classic Artificial Neural Networks. 
-Since the brain use different structures to perform different tasks a DL model organize the network as a sequence of interconnected layers; each layer implement different mechanisms useful for specific contexts.
+Since the brain uses different structures to perform different tasks a DL model organizes the network as a sequence of interconnected layers; each layer implements different mechanisms useful for specific contexts.
 One example is the use of convolution layers in Convolutional Neural Networks.
-In the animal brain the visual cortex organize neurons in a hierarchical structure; neurons closer to the optic nerve are activated by simple features and neurons at higher levels are activated by more complex features and situations.
+In the animal brain, the visual cortex organizes neurons in a hierarchical structure; neurons closer to the optic nerve are activated by simple features and neurons at higher levels are activated by more complex features and situations.
 CNNs are inspired by such mechanism; the model is organized as a sequence of convolutional layers that extract features of increasing complexity.
 
-The state of the art Deep Learning models are able to achieve outstanding results in image, word and speech processing applications but the number of neurons used by DL models is far smaller than the number of neurons present in a human brain.
-In an animal brain the number of neurons is in the order of $10^{11}$ with $10^4$ synapses per neuron while the most complicated Deep Learning models use at best millions of parameters($10^6$ - $10^9$).
+The state of the art Deep Learning models can achieve outstanding results in image, word, and speech processing applications but the number of neurons used by DL models is far smaller than the number of neurons present in a human brain.
+In an animal brain, the number of neurons is in the order of $10^{11}$ with $10^4$ synapses per neuron while the most complicated Deep Learning models use at best millions of parameters($10^6$ - $10^9$).
 
-Since hardware solutions are able to deliver performances of orders of magnitude higher than programmable architectures, research efforts have been directed toward developing HW accelerated solutions to train and deploy bigger and more powerful models.
+Since hardware solutions can deliver performances of orders of magnitude higher than programmable architectures, research efforts have been directed toward developing HW accelerated solutions to train and deploy bigger and more powerful models.
 One possible solution to accelerate Deep Learning application is the use of Field Programmable Gate Arrays composed by simple reconfigurable blocks.
-The HW reconfigurability of FPGAs make them a suitable target to implement sparse models with extremely tailored floating point precision.
+The HW reconfigurability of FPGAs makes them a suitable target to implement sparse models with extremely tailored floating point precision.
 
-An other advantage of FPGA-based solution is the power efficiency; FPGAs maximize performance per watt of energy and the reduction of floating point precision allow to decrease the size of memory buffer thus reducing the amount of energy used to perform memory transfers.
-The disadvantages of FPGA-based solutions are usually limited to the long design time and High Level Synthesis solutions has been developed to overcome this problem.
+Another advantage of FPGA-based solution is the power efficiency; FPGAs maximize performance per watt of energy and the reduction of floating point precision allows to decrease the size of memory buffer thus reducing the amount of energy used to perform memory transfers.
+The disadvantages of FPGA-based solutions are usually limited to the long design time and High-Level Synthesis solutions have been developed to overcome this problem.
 
 This thesis proposes a design flow to ease the deployment of Deep Learning model on FPGA targets. 
-By exploiting the Halide compilation infrastructure and the PandA-Bambu HLS framework the design flow start from the ONNX intermediate representation of a Deep Learning model and produce the RTL Description necessary for the deployment.
+By exploiting the Halide compilation infrastructure and the PandA-Bambu HLS framework the design flow starts from the ONNX intermediate representation of a Deep Learning model and produces the RTL Description necessary for the deployment.
 By using the Halide infrastructure the computation can be optimized by finding the right schedule for the target FPGA and specific application.
-The schedule can be designed to find the right trade-off between memory locality, parallelism and storage granularity; this allow to find the schedule that satisfy application specific constraints such as maximum latency, minimum throughput and maximum power consumption.
+The schedule can be designed to find the right trade-off between memory locality, parallelism, and storage granularity; this allows the programmer to find the schedule that satisfies application-specific constraints such as maximum latency, minimum throughput, and maximum power consumption.
 
-The thesis is organized as follows: Chapter 2 provide an introduction to the field of Artificial Intelligence, Artificial Neural Networks and Deep Learning. Chapter 3 review state of the art frameworks related to the work of the thesis. Chapter 4 describe the proposed design flow and the Bambu back-end implemented as part of the Halide infrastructure.
-
+The thesis is organized as follows: Chapter 2 provides an introduction to the field of Artificial Intelligence, Artificial Neural Networks, and Deep Learning. Chapter 3 reviews state of the art frameworks related to the work of the thesis. Chapter 4 describe the proposed design flow and the Bambu back-end implemented as part of the Halide infrastructure.
 
 \end{document}

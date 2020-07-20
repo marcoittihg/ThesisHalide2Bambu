@@ -1,0 +1,42 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+This chapter confronts the goals that were set at the beginning of the thesis with the actual result.
+We outline the advantages and disadvantages of the final solution while discussing possible future developments to improve the performance of the current design.
+
+\newpage
+\section{Design flow}
+At the beginning of the thesis, we discussed the main advantages of deploying Deep Learning models on FPGA.
+We discussed how the characteristics of FPGAs make them ideal targets to deploy sparse models with custom precision while being energy efficient.
+The drawbacks of FPGAs as HW solution were presented as two-fold: the first problem is related to the long design required to produce an RTL design and deploy the model; this also does not allow fast prototyping of different solution which is a desirable characteristic of the development process.
+The second problem is related to the performance of the final result; just deploying the model as a sequence of transformations on tensors is highly inefficient. The target would be required to store buffers with the size of an entire tensor and all the operations would require loading off-chip memory leading to very poor data locality.
+Since memory transfer is usually responsible for most of the power consumption, continuous communication with the off-chip memory would defeat the purpose of using FPGAs in an application where the power consumption is a requirement of the final application \cite{DBLP:journals/corr/abs-1901-04988}.
+
+The solution to the first problem is the proposed design flow itself.
+The proposed stack eases the design process by only requiring the programmer to convert the computational graph of the Deep Learning model to its ONNX IR representation.
+The model can then be optimized by performing weight pruning and quantization; the Halide infrastructure optimize and translate the ONNX model to a software representation and the PandA-Bambu framework translate the software representation to Verilog/VHDL code.
+
+The second problem is addressed by the scheduling of the Halide infrastructure.
+One of the main characteristics of halide is the separation of the algorithm definition and scheduling. 
+The scheduling allows the programmer to optimize the computation by finding the right trade-off among data locality, parallelism, and buffer sizes.
+Halide also allows to automate the process by using an autoscheduler \cite{halideAutoscheduler},
+
+\section{Future developments and current limitations}
+
+The main current limitation is the lack of an autoscheduler for FPGA targets. 
+Other autoschedulers are already available (Current only for x86 CPUs) but they do not take into consideration the HW resource of the target FPGA and try to predict characteristics that make sense only in the CPU case (Such as the number of page fault costs) \cite{halideAutoscheduler}.
+Another disadvantage of currently available autoschedulers is the fact that they do not take into consideration the HW limitations of the target; for complex models, the autoscheduler easily produces a schedule with buffer sizes that exceed the available memory.
+Using an autoscheduler that takes into consideration the HW resources and limitations would result in a significant improvement in terms of ease of use and final quality of results.
+
+Another limitation is the simplicity of how the back-end extract queue channels between filters.
+The current implementation use queues only in the most simple case; single read/write access, parallelization under the same variables, same loop nest, and matching read/write indexes.
+A more complete implementation should be able to extract queues between filters that do not have such static and strict requirements.
+
+Pruning and quantization operations are currently performed by relying on the VitisAI tools and thus only limited to Xilinx Hardware.
+Developing other tools able to optimize DL models for generic targets and not only for Xilinx HW would allow the programmer to optimize models without using other resources.
+
+In terms of support for Deep Learning models, the current implementation support models implemented by the ONNX to Halide converter implemented inside the Halide infrastructure and some types of layers are not supported.
+That limitation affects the type of models that can be deployed by using the proposed design flow, but Halide is currently under development and will improve the support in the future.
+
+\end{document}

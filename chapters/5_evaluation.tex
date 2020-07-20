@@ -1,0 +1,191 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+This chapter describes how we tested the results produced by the proposed design flow.
+Section \ref{test-suite} presents the test suite of models used to test the results of the final design flow.
+Section \ref{correctness} describes how the correctness of the back-end has been tested.
+Section \ref{performance} describes the setup used to test the performance of a set of selected models taken from the test suite; the section also presents the numerical results on a selected subset of models, taken from the test suite.
+
+\newpage
+\section{Test suite}
+\label {test-suite}
+
+To evaluate the results produced by the proposed design flow, we used a suite of models composed of examples taken from the literature.
+We used some simple operators from \cite{noronha2018leflow} and some other complete networks as MLP, LeNet-5, and some winners of the ImageNet competition.
+
+\subsection{Single operators}
+
+\textbf{vecmul}\\
+The simplest models considered are vecmul operations; these operations take as input two arrays and calculate their elementwise multiplication.
+Two versions of this operation have been considered: a smaller one that performs the multiplication over 8 elements (01\_vecmul\_a) and a bigger one that uses 64 elements (01\_vecmul\_b).
+
+\textbf{dense}\\
+The second considered elementary operator test dense operations.
+Deep Learning models use dense layers in almost every model; they are always present and their memory-centric computation is well suited to be optimized by the Halide infrastructure.
+The model is implemented as a matrix multiplication followed by a bias add operation.
+As for the vecmul operations two examples have been considered; a smaller one over 8 input elements (04\_dense\_a) and a bigger one over 64 (05\_dense\_b).
+
+\textbf{softmax}\\
+Another important operation performed by Deep Learning models is the softmax operation.
+The softmax operation is used in networks trained to perform classification over multiple classes.
+The operation is fairly common and involves computing a transformation over the input that maps all elements in the 0 to 1 range.
+As for the other operators we used two versions of the softmax operator; the smaller compute the operation over 8 input elements (06\_softmax\_a) and the bigger one over 64 (07\_softmax\_b).
+
+\textbf{conv}\\
+Convolution operators are important for CNN models; they are compute-centric layers that perform a convolution operation over the input.
+The considered models use the winograd algorithm to compute the operation, which is an optimized algorithm to lower the number of matrix multiplication needed by convolutional layers.
+The smaller model computes the convolution over a grayscale 8x8 image (09\_conv2d\_a) and the bigger one performs the same operation over a grayscale 64x64 image (11\_conv2d\_b).
+Both models use 3x3 kernels.
+
+\textbf{maxpool}\\
+Another important operator for Convolutional Neural Networks is the Maxpool operator.
+As stated at the beginning of this thesis, this operator is used after convolutional layers to reduce the dimensionality of the input image and reduce the computational requirements of the model.
+As for the other operators we chose to use two different examples: a smaller that compute the operation over an 8x8 image (12\_maxp\_a) and a bigger one that perform the same operation over a 32x32 image (13\_maxp\_b).
+The two models have been adapted since the ones from the original paper use a type of padding not supported by the ONNX converted.
+
+\textbf{thxprlsg}\\
+The last single operator from the LeFlow paper is the thxprlsg operator.
+This operator performs a mix of tanh, exponential, relu, and sigmoid applied to an array with 8 elements (15\_thxprlsg).
+This is done to test the performance of the final result on different activation functions.
+
+\bigskip
+
+These operators represent common elementary operations in Deep Learning models.
+Operations such as matrix multiplications, convolutions, and max-pooling operations are common to most of the CNN models.
+Being able to implement the most common operations independently is a requirement.
+If the design flow fails to implement simple operations it is not worth trying to evaluate the performance of bigger ONNX models.
+
+\subsection{Complete Networks}
+
+\textbf{MLP}\\
+The MLP example is a standard ANN representation; the model computes a matrix multiplication over the input 784 elements followed by a bias add and a softmax operation over the output 10 elements (e1\_mlp).
+This is the first example that composes other operators to compute a model that might be used in a real application.
+
+\textbf{LeNet-5}\\
+Another complete example that we have considered is the LeNet-5 model \cite{lenet}; the model takes as input a 28x28 grayscale image and performs a sequence of simple convolutions and fully connected layers (lenet).
+This network goal is to recognize the handwritten digit contained in the input image.
+
+\newpage
+
+
+\textbf{AlexNet}\\
+The first complete model that we used is AlexNet \cite{alexnet} \cite{venieris2018toolflows}. The model achieved a top-5 error rate of 15.3\% on the test dataset and has approximately 60 million parameters. The computation uses all the previously tested CNN operators plus dropout layers that have been used as regularization mechanisms (i1\_alexnet).
+
+\textbf{Zfnet}\\
+The second model is the Zfnet model \cite{zfnet} \cite{venieris2018toolflows}. This model improved the results of AlexNet by finetuning the model by a better understanding of how convolutions work (i2\_zfnet).
+
+\textbf{VGG16}\\
+The third and final model used to test the design flow is VGG16 \cite{vgg16} \cite{venieris2018toolflows}. This model achieves 92.7\% top-5 test accuracy in ImageNet and uses 138 million parameters (i3\_vgg16).
+
+
+\section{Correctness evaluation}
+\label {correctness}
+
+Once we have a design flow able to deploy an ONNX model, we need to test if the produced filters perform the correct transformation.
+
+To do that we used the test suite of models presented in the previous chapter, we generated the output filters with the Bambu codegen, and we computed the output results by using random inputs.
+We repeated the same procedure with the standard x86 codegen, already implemented in the Halide infrastructure.
+
+
+The testing procedure is executed by a Halide application; the makefile takes as input the name of the model to be tested and generate the code for the two targets.
+For every model that needed to be tested, we defined a test function; the application calls the test function to compute and check the results of the Bambu back-end with the output of the x86 back-end.
+If the test function finds a difference between the results of the two codegens, print an error to signal that a test has failed and that there is something wrong with the generated results.
+Since the output matches, even on complete models as VGG-16 and Alexnet, we are sure that the codegen can generate correct filters for the most common applications.
+
+A more extensive procedure might involve generating random ONNX models.
+Even if the suite includes most of the most common Deep Learning architectures there might be edge cases.
+Generating random ONNX models would allow us to create a more robust codegen, by testing it in situations non considered by the test suite.
+
+\section{Performance Evaluation}
+\label {performance}
+
+To test the performance of the final result, we decided to use some operators and complete models taken from the test suite.
+
+Since we are interested in Deep Learning models, and in particular in  Convolutional Neural Networks, we used the two main building blocks of CNNs, which are MaxPool and Convolutional layers.
+These operators are the most commonly used in image processing applications, and by testing the final performance of these layers separately, the results should give an idea of the overall performance of the design flow on image processing pipelines.
+
+To test more complete examples we used one other model from the design suite, which is MLP.
+Since MLP is a simple Artificial Neural Network, we used its model to test the performance on simple networks that do not incorporate convolutional operations.
+Its structure is well suited to test the final performance of sequences of dense and nonlinear transformations.
+
+\subsection{Experimental setup}
+
+The design flow relies on 3 components to generate final  RTL Description: The ONNX IR to provide a common entry point, the Halide infrastructure to optimize the computations, and Bambu HLS to produce the final implementation.
+
+The models used to test the final results have been generated by using ONNX version 1.5.0.
+The models have been generated by using basic ONNX features since what matters is to provide a common entry point for Halide.
+
+The last release of the Halide infrastructure (2019/08/27) has been used to implement the Bambu backend and optimize the ONNX IR.
+To translate the ONNX representation we used the ONNX converter app already implemented in the Halide master branch.
+Even if the Halide app is not able to convert some models from the ONNX representation we are confident that the support is going to be expanded in the future.
+The project is currently under development and the GitHub master branch receives commits on a daily basis.
+
+Finally, Bambu 0.9.6 was used to translate the C filters, the output of the Bambu backend, to HDL code.
+
+
+\subsection{Numerical results}
+
+We ran the selected models by using two different approaches: By computing and storing all stages at root granularity, and by using the CPU x86 autoscheduler.
+The models were compiled from the ONNX representation to the abstract representation through the Halide infrastructure with its Bambu-backend.
+The results were then synthesized on a Zynq-7000 SoC with gcc and -O3 optimization.
+
+\bigskip
+
+\begin{table}[h]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccccc}
+\hline
+\textbf{Benchmark} & \textbf{Area} & \textbf{Slack} & \textbf{Cycles} & \textbf{DSPs} & \textbf{Frequency} & \textbf{Registers} & \textbf{Slice} \\ \hline
+maxpool\_8       & 988    & 3,76  & 556           & 0             & 88,96              & 878        & 381        \\
+maxpool\_32      & 988     & 3,76  & 556           & 0             & 88,96              & 878        & 381         \\
+conv2d\_8x8   & 12.353    & -0,822  & 442.209           & 2            & 63,20              & 13.702        & 5.925        \\ 
+conv2d\_64x64   & 16.919    & -1,798  & 18.093.466           & 2            & 59,53              & 15.267        & 7.750        \\ 
+MLP          & 6.932     & -1,2  & 57.648               & 9             & 61,72              & 5.048        & 2.601        \\
+\hline
+\end{tabular}
+\caption{Timing and area estimates targeting a Zynq-7000 SoC with autoscheduler}
+\label{res-table1}
+\end{table}
+
+\bigskip
+
+\begin{table}[h]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccccc}
+\hline
+\textbf{Benchmark} & \textbf{Area} & \textbf{Slack} & \textbf{Cycles} & \textbf{DSPs} & \textbf{Frequency} & \textbf{Registers} & \textbf{Slice} \\ \hline
+maxpool\_8       & 832    & 0,35  & 82           & 0             & 68,25              & 728        & 339        \\
+maxpool\_32      & 1.025     & 0,481  & 2.113           & 0             & 68,87              & 685        & 349         \\
+conv2d\_8x8   & 3.121    & -0,554  & 2.019.778           & 2            & 64,29              & 3.769        & 1.464        \\ 
+conv2d\_64x64   & 3.234    & -0,707  & 129.261.690           & 2            & 63,66              & 3.824        & 1.528        \\ 
+MLP          & 3.904     & -0,872  & 107.958               & 9             & 63,00              & 3.359        & 1.449        \\
+\hline
+\end{tabular}
+\caption{Timing and area estimates targeting a Zynq-7000 SoC without autoscheduler}
+\label{res-table1}
+\end{table}
+
+\bigskip
+\bigskip
+
+It is not straight forward to compare the results; sometimes the performance is better when using the x86 autoscheduler and sometimes a simple compute root approach leads to better results.
+The best solution is to try different solutions and select the one that best suits the constraints of the target-specific application.
+
+Even if the results do not provide a clear and unique approach they show the impact that the schedule can have on the final implementation.
+The performance of a model with a carefully managed schedule can easily outperform a schedule that follows a naive heuristic.
+
+\newpage
+
+\section{Conclusions}
+In this section, we presented the test suite used to test the proposed design flow.
+We addressed the problem of ensuring that the produced abstract representation is correct, and that leads to high-performance implementation.
+
+In the next section, we are going to highlight some of the limitations of the current implementation and present some possible future development directions to expand the capabilities of the current design flow.
+
+
+
+\end{document}
